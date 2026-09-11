@@ -6,7 +6,6 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
   initHamburgerMenu();
-  initFAQAccordion();
   initFilterButtons();
   initFormValidation();
   initSmoothScroll();
@@ -78,45 +77,7 @@ function initHamburgerMenu() {
 }
 
 /* =========================================================================
-   3. FAQ ACCORDION
-   ========================================================================= */
-
-function initFAQAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  if (faqItems.length === 0) {
-    console.warn('⚠ FAQ items not found');
-    return;
-  }
-
-  console.log('✓ FAQ accordion active');
-
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-
-    if (!question || !answer) return;
-
-    question.addEventListener('click', function() {
-      const isOpen = item.classList.contains('open');
-      item.classList.toggle('open');
-      question.setAttribute('aria-expanded', !isOpen);
-    });
-
-    // Keyboard support (Enter or Space to open/close)
-    question.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        const isOpen = item.classList.contains('open');
-        item.classList.toggle('open');
-        question.setAttribute('aria-expanded', !isOpen);
-      }
-    });
-  });
-}
-
-/* =========================================================================
-   4. FILTER BUTTONS & COUNTER
+   3. FILTER BUTTONS & COUNTER
    ========================================================================= */
 
 function initFilterButtons() {

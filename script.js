@@ -5,7 +5,6 @@
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-  initHeroVideo();
   initHamburgerMenu();
   initFAQAccordion();
   initFilterButtons();
@@ -17,72 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================================
-   1. HERO VIDEO BINDING (Scroll-Driven)
+   1. HERO SECTION (Static SVG Illustration)
    ========================================================================= */
 
-function initHeroVideo() {
-  const video = document.querySelector('#hero-video');
-  const hero = document.querySelector('#hero');
-
-  if (!video) {
-    console.warn('⚠ Hero video not found');
-    if (hero) {
-      hero.classList.add('no-video');
-    }
-    return;
-  }
-
-  console.log('✓ Hero video binding active');
-
-  // Wait for video metadata to load
-  video.addEventListener('loadedmetadata', function() {
-    window.addEventListener('scroll', updateVideoProgress, { passive: true });
-  });
-
-  // Error handling
-  video.addEventListener('error', function() {
-    console.warn('⚠ Video failed to load, showing fallback');
-    if (hero) {
-      hero.classList.add('no-video');
-    }
-  });
-
-  // Pause video (don't autoplay)
-  video.pause();
-
-  function updateVideoProgress() {
-    if (!video || !hero) return;
-    if (!isFinite(video.duration) || video.duration === 0) return;
-
-    const heroHeight = hero.offsetHeight || 0;
-    const heroTop = hero.offsetTop || 0;
-    const scrollTop = window.scrollY || 0;
-
-    // Validate all values are valid numbers
-    if (!isFinite(heroHeight) || !isFinite(heroTop) || !isFinite(scrollTop)) return;
-
-    // Calculate scroll progress (0.0 to 1.0)
-    let progress = (scrollTop - heroTop + window.innerHeight) / (heroHeight + window.innerHeight);
-
-    // Clamp progress between 0 and 1
-    progress = Math.max(0, Math.min(1, progress));
-
-    // Validate progress is a finite number before setting
-    if (!isFinite(progress) || progress < 0 || progress > 1) return;
-
-    // Set video currentTime based on progress (with error handling)
-    try {
-      const newTime = progress * video.duration;
-      if (isFinite(newTime)) {
-        video.currentTime = newTime;
-      }
-    } catch (e) {
-      console.warn('⚠ Video currentTime error:', e.message);
-    }
-  }
-
-  // Initial call (safe - will return early if video not ready)
-  updateVideoProgress();
+function initHeroSection() {
+  console.log('✓ Hero section loaded');
 }
 
 /* =========================================================================

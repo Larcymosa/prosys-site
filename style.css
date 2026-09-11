@@ -483,6 +483,83 @@ button[type="submit"]:disabled {
 }
 
 /* ==========================================================================
+   STATS SECTION
+   ========================================================================== */
+
+#stats {
+  background: #f9fafb;
+  padding: var(--space-80) var(--space-40);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-40);
+  text-align: center;
+}
+
+.stat-item {
+  padding: var(--space-32) var(--space-24);
+  border-radius: 12px;
+  background: rgba(230, 57, 70, 0.02);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  background: rgba(230, 57, 70, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.stat-number {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: #e63946;
+  font-family: var(--font-display);
+  line-height: 1;
+  margin-bottom: var(--space-12);
+}
+
+.stat-label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-32);
+  }
+
+  #stats {
+    padding: var(--space-64) var(--space-32);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+
+  #stats {
+    padding: var(--space-48) var(--space-16);
+  }
+
+  .stat-item {
+    padding: var(--space-24) var(--space-16);
+  }
+
+  .stat-number {
+    font-size: clamp(24px, 3vw, 36px);
+  }
+}
+
+/* ==========================================================================
    PRODUCTS SECTION
    ========================================================================== */
 
@@ -651,6 +728,131 @@ button[type="submit"]:disabled {
   .filter-btn {
     font-size: 13px;
     padding: 8px 16px;
+  }
+}
+
+/* ==========================================================================
+   HOW IT WORKS SECTION
+   ========================================================================== */
+
+#how-it-works {
+  padding: var(--space-100) var(--space-40);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.how-it-works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-it-works-container h2 {
+  text-align: center;
+  margin-bottom: var(--space-32);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-64) !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-40);
+  position: relative;
+}
+
+.step-item {
+  text-align: center;
+  padding: var(--space-32) var(--space-24);
+  border-radius: 12px;
+  background: var(--canvas);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #e63946 0%, #d42f39 100%);
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: var(--space-20);
+  font-family: var(--font-display);
+}
+
+.step-item h3 {
+  font-size: 18px;
+  margin-bottom: var(--space-12);
+  color: var(--text-primary);
+}
+
+.step-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-32);
+  }
+
+  #how-it-works {
+    padding: var(--space-64) var(--space-32);
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+
+  #how-it-works {
+    padding: var(--space-48) var(--space-16);
+  }
+
+  .section-subtitle {
+    margin-bottom: var(--space-48) !important;
+  }
+
+  .step-item {
+    padding: var(--space-24) var(--space-16);
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .step-item h3 {
+    font-size: 16px;
+  }
+
+  .step-item p {
+    font-size: 13px;
   }
 }
 

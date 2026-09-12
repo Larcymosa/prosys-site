@@ -5,7 +5,6 @@
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-  initCodeAnimation();
   initHamburgerMenu();
   initFilterButtons();
   initFormValidation();
@@ -16,64 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================================
-   1. CODE ANIMATION (Hero Background)
-   ========================================================================= */
-
-function initCodeAnimation() {
-  const codeElement = document.querySelector('.code-typing');
-  if (!codeElement) return;
-
-  const codeSnippets = [
-    'def optimize_system():\n  system = "Prosys"\n  efficiency = 99.8%\n  return enhanced',
-    'class Enterprise:\n  automation = True\n  scalable = True\n  secure = True',
-    'if enterprise_needs():\n  prosys = Solution()\n  prosys.deploy()\n  success = True'
-  ];
-
-  let snippetIndex = 0;
-  let isDeleting = false;
-  let charIndex = 0;
-  let currentText = '';
-
-  function typeEffect() {
-    const snippet = codeSnippets[snippetIndex];
-
-    if (!isDeleting) {
-      // Typing
-      if (charIndex < snippet.length) {
-        currentText += snippet[charIndex];
-        charIndex++;
-        codeElement.textContent = currentText;
-        setTimeout(typeEffect, 30);
-      } else {
-        // Pause before deleting
-        setTimeout(() => {
-          isDeleting = true;
-          typeEffect();
-        }, 2000);
-      }
-    } else {
-      // Deleting
-      if (charIndex > 0) {
-        charIndex--;
-        currentText = snippet.substring(0, charIndex);
-        codeElement.textContent = currentText;
-        setTimeout(typeEffect, 20);
-      } else {
-        // Move to next snippet
-        snippetIndex = (snippetIndex + 1) % codeSnippets.length;
-        isDeleting = false;
-        charIndex = 0;
-        currentText = '';
-        setTimeout(typeEffect, 800);
-      }
-    }
-  }
-
-  typeEffect();
-}
-
-/* =========================================================================
-   2. HERO SECTION (Static SVG Illustration)
+   1. HERO SECTION (SVG Illustration)
    ========================================================================= */
 
 function initHeroSection() {

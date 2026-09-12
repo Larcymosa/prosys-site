@@ -414,8 +414,8 @@ button[type="submit"]:disabled {
   overflow: hidden;
 }
 
-/* Animated Code Background - Hero Only */
-.code-background {
+/* Professional SVG Illustration Background */
+.hero-visual {
   position: absolute;
   top: 0;
   left: 0;
@@ -424,42 +424,17 @@ button[type="submit"]:disabled {
   background: linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(30, 30, 45, 0.98) 100%);
   z-index: 1;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.code-typing {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 90%;
-  height: 80%;
-  color: #0f0;
-  font-family: 'Courier New', monospace;
-  font-size: clamp(12px, 2vw, 18px);
-  line-height: 1.8;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  margin: 0;
-  padding: 20px;
-  border: 1px solid #e63946;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0.15;
-  overflow: hidden;
-}
-
-@keyframes typing {
-  0%, 5% {
-    content: '';
-  }
-  10%, 45% {
-    content: 'def optimize_system():\n  system = "Prosys"\n  efficiency = 99.8%\n  return enhanced';
-  }
-  50%, 95% {
-    content: '';
-  }
-  100% {
-    content: '';
-  }
+.hero-visual svg {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  opacity: 0.8;
+  filter: drop-shadow(0 10px 30px rgba(230, 57, 70, 0.1));
 }
 
 .hero-container {

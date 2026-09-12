@@ -46,9 +46,89 @@
   <main>
 
     <section id="hero" class="hero">
-      <!-- Animated Code Background -->
-      <div class="code-background">
-        <pre class="code-typing"></pre>
+      <!-- Professional SVG Illustration -->
+      <div class="hero-visual">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#e63946;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#d42f39;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <style>
+              @keyframes pulse {
+                0%, 100% { r: 28; opacity: 0.9; }
+                50% { r: 32; opacity: 0.7; }
+              }
+              .pulse-node { animation: pulse 3s ease-in-out infinite; }
+              @keyframes flowAnimation {
+                0% { stroke-dashoffset: 0; }
+                100% { stroke-dashoffset: -10; }
+              }
+              .flow-line { animation: flowAnimation 2s linear infinite; }
+            </style>
+          </defs>
+
+          <!-- Background accent circles -->
+          <circle cx="80" cy="80" r="60" fill="#e5e7eb" opacity="0.15"/>
+          <circle cx="420" cy="420" r="80" fill="#1a1f2e" opacity="0.1"/>
+
+          <!-- Data flow paths -->
+          <path d="M 80 250 Q 180 200 250 250" stroke="#1a1f2e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 80 250 Q 180 200 250 250" stroke="#e63946" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5" class="flow-line"/>
+
+          <path d="M 250 250 Q 320 200 420 250" stroke="#1a1f2e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 250 250 Q 320 200 420 250" stroke="#e63946" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5" class="flow-line"/>
+
+          <path d="M 250 250 Q 220 330 250 400" stroke="#1a1f2e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 250 250 Q 220 330 250 400" stroke="#e63946" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5" class="flow-line"/>
+
+          <path d="M 250 250 Q 310 150 370 120" stroke="#1a1f2e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 250 250 Q 310 150 370 120" stroke="#e63946" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5" class="flow-line"/>
+
+          <path d="M 80 250 Q 120 140 180 100" stroke="#1a1f2e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 80 250 Q 120 140 180 100" stroke="#e63946" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="5,5" class="flow-line"/>
+
+          <!-- Node circles -->
+          <circle cx="250" cy="250" r="28" fill="url(#nodeGrad)" filter="url(#glow)" opacity="0.9"/>
+          <circle cx="250" cy="250" r="20" fill="#e63946" opacity="0.3"/>
+
+          <circle cx="80" cy="250" r="20" fill="#1a1f2e" opacity="0.8"/>
+          <circle cx="80" cy="250" r="14" fill="#e5e7eb" opacity="0.6"/>
+          <circle cx="80" cy="250" r="10" fill="#1a1f2e" opacity="0.5"/>
+
+          <circle cx="370" cy="120" r="18" fill="#1a1f2e" opacity="0.7"/>
+          <circle cx="370" cy="120" r="12" fill="#e5e7eb" opacity="0.5"/>
+
+          <circle cx="420" cy="250" r="20" fill="#1a1f2e" opacity="0.8"/>
+          <circle cx="420" cy="250" r="14" fill="#e5e7eb" opacity="0.6"/>
+          <circle cx="420" cy="250" r="10" fill="#1a1f2e" opacity="0.5"/>
+
+          <circle cx="250" cy="400" r="18" fill="#1a1f2e" opacity="0.7"/>
+          <circle cx="250" cy="400" r="12" fill="#e5e7eb" opacity="0.5"/>
+
+          <circle cx="180" cy="100" r="16" fill="#1a1f2e" opacity="0.7"/>
+          <circle cx="180" cy="100" r="11" fill="#e5e7eb" opacity="0.5"/>
+
+          <!-- Geometric accents -->
+          <rect x="30" y="30" width="50" height="35" rx="4" fill="#e5e7eb" opacity="0.3"/>
+          <rect x="35" y="35" width="40" height="25" rx="3" fill="#1a1f2e" opacity="0.2"/>
+
+          <rect x="420" y="420" width="50" height="35" rx="4" fill="#e63946" opacity="0.15"/>
+          <rect x="425" y="425" width="40" height="25" rx="3" fill="#e63946" opacity="0.1"/>
+
+          <line x1="150" y1="50" x2="200" y2="50" stroke="#e63946" stroke-width="2" opacity="0.6"/>
+          <line x1="300" y1="450" x2="350" y2="450" stroke="#1a1f2e" stroke-width="2" opacity="0.4"/>
+
+          <!-- Pulsing central node -->
+          <circle cx="250" cy="250" r="28" fill="none" stroke="#e63946" stroke-width="2" opacity="0.4" class="pulse-node"/>
+        </svg>
       </div>
 
       <div class="hero-container">
